@@ -1,11 +1,20 @@
 var Player = cc.Class.extend({
-    ctor : function(){
-        this._initVars();
+    ctor : function(index,pos){
+        this._initVars(index,pos);
         this._init();
     },
 
-    _initVars : function(){},
-    _init : function(){},
+    _initVars : function(index,pos){
+        this._playerIndex = index;
+        this._pos = pos;
+    },
+    _init : function(){
+
+    },
+
+    getPos : function(){
+        return this._pos;
+    },
 })
 
 var Players = cc.Class.extend({
@@ -25,7 +34,9 @@ var Players = cc.Class.extend({
         }
     },
 
-    addPlayer : function(player){
+    addPlayer : function(){
+        var index = this._players.length;
+        var player = new Player(index,this._playerPos[index]);
         this._players.push(player);
     },
 

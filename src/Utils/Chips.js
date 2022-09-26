@@ -16,16 +16,16 @@ var Chips = cc.Node.extend({
         this.addChild(chip);
     },
 
-    addChip : function(count){
-        for(var i=0; i<count; i++){
-            this._addChip();
-        }
+    addChip : function(){
+        
     },
     _addChip : function(){
         this._chipCount++;
+
+        if(this.chips[this.])
         var chip = new Chip();
         var chipPosY = this._getCurrChip().getPositionY()+10;
-        var playerPos = Players.getInstance().getPlayer(this._player.getIndex()).getPosition();
+        var playerPos = Players.getInstance().getPlayer(this._player.getIndex()).getPos();
         playerPos.y += chipPosY;
 
 
